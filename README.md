@@ -1,3 +1,3 @@
 # Gallery
 
-belum ada animasi pas di next & prev
+belum ada animasi pas di next & prev (lightbox)
