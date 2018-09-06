@@ -28,6 +28,7 @@ container.addEventListener('click', function(e){
 /*Nav next & prev */
 var i = 1;
 overlay.addEventListener('click', function(e){
+	// pas di click next
 	if (e.target.className == 'next') {
 		i++;
 		if (i >= thumbs.length + 1) {
@@ -36,22 +37,15 @@ overlay.addEventListener('click', function(e){
 		lightboxImg.src = "img/pic"+ i +".jpg";
 		console.log(lightboxImg);
 	}
+	// pas di click prev
 	if (e.target.className == 'prev') {
 		i--;
 		if (i === 0) {
 			i = thumbs.length;			
 		}
+		// i = menurut next(+1)/prev(-1)
 		lightboxImg.src = "img/pic"+ i +".jpg";
+		// debug
 		console.log(lightboxImg);
 	}
 });
-
-
-// const newjudul = document.getElementById('judul');
-// newjudul.innerHTML = 'GALLERY';
-
-// const newClose = container.querySelector('.close');
-// newClose.innerHTML = 'BOY';
-
-// const p = document.createElement('p');
-// const text = document.createTextNode('HELLO WORLD');
