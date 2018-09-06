@@ -5,6 +5,10 @@
 	line-height: 0;
 }
 
+#judul {
+	margin-top: 50px;
+}
+
 body {
 	background-color: #ddd;
 	text-align: center;
@@ -15,6 +19,80 @@ body {
 	margin: 50px auto;
 	border: 5px solid #fff;
 	overflow: auto;
+}
+
+.mainImg {
+	cursor: pointer;
+}
+
+/* lightbox */
+
+.overlay {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	z-index: 99;
+	padding: 100px 0;
+	transition: .3s;
+	position: fixed;
+	overflow: hidden;
+	text-align: center;
+	background-color: rgba(0,0,0,0);
+}
+
+.overlay:target {
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: auto;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.overlay img {
+	max-height: 100%;
+}
+
+.overlay:target img {
+	animation: zoom .7s;
+}
+
+.overlay .close {
+	top: 55px;
+	left: 50%;
+	color: #fff;
+	opacity: .8;
+	transition: .3s;
+	font-size: 20px;
+	line-height: 15px;
+	margin-left: 80px;
+	padding: 10px 17px;
+	border: 0px solid #fff;
+	position: absolute;
+	text-decoration: none;
+	font-family: sans-serif;
+	background-color: maroon;
+}
+
+.overlay .close:hover {
+	opacity: 1;
+}
+
+/* nav */
+
+.next, .prev {
+	top: 25%;
+	width: 100px;
+	height: 190px;
+	margin-left: 20px;
+	text-indent: -9999;
+	position: absolute;
+	background-image: url(img/nextNav.png);
+}
+
+.prev {
+	background-image: url(img/prevNav.png);
+	margin-left: -140px;
 }
 
 .thumb {
@@ -32,7 +110,8 @@ body {
 	filter: grayscale(0);
 }
 
-/*animasi*/
+/* animasi main img */
+
 @keyframes fadeIn {
 	to {
 		opacity: 1;
@@ -47,4 +126,16 @@ body {
 .active {
 	opacity: 1;
 	filter: grayscale(0);
+}
+
+/* animasi overlay */
+
+@keyframes zoom {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }

@@ -1,9 +1,11 @@
 const container = document.querySelector('.container');
 const mainImg = document.querySelector('.mainImg');
 const thumbs = document.querySelectorAll('.thumb');
+const overlay = document.querySelector('.overlay');
+const lightboxImg = document.querySelector('.lightboxImg');
 
 container.addEventListener('click', function(e){
-	// check apa yg di click class thumb(gambar kecil)
+	// check class thumb(gambar kecil)
 	if (e.target.className == 'thumb') {
 		mainImg.src = e.target.src;
 		// tambahin animasi
@@ -22,3 +24,34 @@ container.addEventListener('click', function(e){
 		e.target.classList.add('active');
 	}
 });
+
+/*Nav next & prev */
+var i = 1;
+overlay.addEventListener('click', function(e){
+	if (e.target.className == 'next') {
+		i++;
+		if (i >= thumbs.length + 1) {
+			i = 1;			
+		}
+		lightboxImg.src = "img/pic"+ i +".jpg";
+		console.log(lightboxImg);
+	}
+	if (e.target.className == 'prev') {
+		i--;
+		if (i === 0) {
+			i = thumbs.length;			
+		}
+		lightboxImg.src = "img/pic"+ i +".jpg";
+		console.log(lightboxImg);
+	}
+});
+
+
+// const newjudul = document.getElementById('judul');
+// newjudul.innerHTML = 'GALLERY';
+
+// const newClose = container.querySelector('.close');
+// newClose.innerHTML = 'BOY';
+
+// const p = document.createElement('p');
+// const text = document.createTextNode('HELLO WORLD');
