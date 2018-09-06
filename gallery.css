@@ -1,3 +1,4 @@
+/*css reset*/
 * {
 	margin: 0;
 	padding: 0;
@@ -31,6 +32,7 @@ body {
 	filter: grayscale(0);
 }
 
+/*animasi*/
 @keyframes fadeIn {
 	to {
 		opacity: 1;
