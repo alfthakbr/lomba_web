@@ -1,3 +1,3 @@
 # Gallery
 
-Small update
+belum ada animasi pas di next & prev
