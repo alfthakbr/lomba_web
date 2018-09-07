@@ -1,3 +1,7 @@
 # Gallery
 
-belum ada animasi pas di next & prev (lightbox)
++ animasi LightBox(swipe l/r)
++ ketika lightBox pindah, Main Image ikutan
+
+* Bug : lightBox
+	pas pilih image kedua di thumbnail
