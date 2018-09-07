@@ -3,15 +3,17 @@
 	margin: 0;
 	padding: 0;
 	line-height: 0;
-}
-
-#judul {
-	margin-top: 50px;
+	font-family: sans-serif;
 }
 
 body {
 	background-color: #ddd;
 	text-align: center;
+}
+
+#judul {
+	margin-top: 30px;
+	font-size: 35px;
 }
 
 .container {
@@ -38,7 +40,6 @@ body {
 	position: fixed;
 	overflow: hidden;
 	text-align: center;
-	background-color: rgba(0,0,0,0);
 }
 
 .overlay:target {
@@ -54,7 +55,7 @@ body {
 }
 
 .overlay:target img {
-	animation: zoom .7s;
+	animation: zoom .7s ;
 }
 
 .overlay .close {
@@ -68,15 +69,18 @@ body {
 	margin-left: 80px;
 	padding: 10px 17px;
 	border: 0px solid #fff;
+	box-shadow: 2px 2px 1px #000;
 	position: absolute;
 	text-decoration: none;
 	font-family: sans-serif;
-	background-color: maroon;
+	background-color: rgba(128,0,0,0.8);
 }
 
 .overlay .close:hover {
 	opacity: 1;
+	background-color: rgba(128,0,0,0.9);
 }
+
 
 /* nav */
 
@@ -110,8 +114,13 @@ body {
 	filter: grayscale(0);
 }
 
-/* animasi main img */
+.lightboxImg {
+	box-shadow: 5px 5px 5px #000;
+}
 
+
+
+/* animasi main img */
 @keyframes fadeIn {
 	to {
 		opacity: 1;
@@ -120,7 +129,7 @@ body {
 
 .fade {
 	opacity: 0;
-	animation: fadeIn .5s forwards;
+	animation: fadeIn .3s forwards;
 }
 
 .active {
@@ -128,9 +137,39 @@ body {
 	filter: grayscale(0);
 }
 
+/* animasi LightBox Right */
+@keyframes fadeLbR {
+	to {
+		opacity: 1;
+		margin-left: 0%;
+	}
+}
+
+.fadeLbR:target .lightboxImg {
+	opacity: 0;
+	margin-left: 10%;
+	animation: fadeLbR .3s forwards;
+}
+
+/* animasi LightBox left */
+@keyframes fadeLbL {
+	to {
+		opacity: 1;
+		margin-right: 0%;
+	}
+}
+
+.fadeLbL:target .lightboxImg {
+	z-index: 100;
+	opacity: 0;
+	margin-right: 10%;
+	animation: fadeLbL .3s forwards;
+}
+
+
 /* animasi overlay */
 
-@keyframes zoom {
+/*@keyframes zoom {
 	0% {
 		opacity: 0;
 	}
@@ -138,4 +177,4 @@ body {
 	100% {
 		opacity: 1;
 	}
-}
+}*/
